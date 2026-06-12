@@ -1,0 +1,7 @@
+  mkdir devops-ai-demos-new
+  cd devops-ai-demos-new
+   apt-get update && apt-get install python3-pip python3-venv 
+   python3 --version
+   python3 -m venv venv
+  source venv/bin/activate
+   pip install pyyaml openai
