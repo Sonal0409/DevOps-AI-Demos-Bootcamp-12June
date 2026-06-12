@@ -1,0 +1,36 @@
+2026-06-12T20:31:00Z [INFO]  Pipeline #4821 started — branch: main — commit: a3f9d12
+2026-06-12T20:31:01Z [INFO]  Triggered by: push event — author: dev@company.com
+2026-06-12T20:31:02Z [INFO]  Runner: ubuntu-latest — workspace: /home/runner/work/api-server
+2026-06-12T20:31:05Z [INFO]  ── Job: build ──────────────────────────────────────────
+2026-06-12T20:31:05Z [INFO]  Checking out repository at a3f9d12...
+2026-06-12T20:31:07Z [INFO]  Checkout complete
+2026-06-12T20:31:08Z [INFO]  Setting up Node.js 20.x
+2026-06-12T20:31:12Z [INFO]  node v20.11.0 npm 10.2.4
+2026-06-12T20:31:13Z [INFO]  Cache miss — installing node_modules from scratch
+2026-06-12T20:31:45Z [INFO]  npm install completed — 847 packages installed
+2026-06-12T20:31:46Z [INFO]  Running: npm run build
+2026-06-12T20:31:52Z [INFO]  Build output: dist/ (14.2 MB)
+2026-06-12T20:31:52Z [INFO]  ✓ Job: build — PASSED (47s)
+2026-06-12T20:31:55Z [INFO]  ── Job: test ───────────────────────────────────────────
+2026-06-12T20:31:55Z [INFO]  Running test suite: jest --ci --coverage
+2026-06-12T20:32:10Z [INFO]  PASS src/auth/login.test.js (12 tests)
+2026-06-12T20:32:11Z [INFO]  PASS src/api/routes.test.js (34 tests)
+2026-06-12T20:32:14Z [WARN]  FAIL src/payments/checkout.test.js
+2026-06-12T20:32:14Z [ERROR] ● checkout › processPayment › should handle Stripe timeout
+2026-06-12T20:32:14Z [ERROR]   Expected: resolve with { status: 'pending' }
+2026-06-12T20:32:14Z [ERROR]   Received: TypeError: Cannot read property 'id' of undefined
+2026-06-12T20:32:14Z [ERROR]     at StripeClient.charge (src/payments/stripe.js:47:12)
+2026-06-12T20:32:14Z [ERROR]     at processPayment (src/payments/checkout.js:23:8)
+2026-06-12T20:32:15Z [ERROR] ● checkout › processPayment › should retry on 429
+2026-06-12T20:32:15Z [ERROR]   Error: Stripe mock not initialized — missing STRIPE_TEST_KEY env var
+2026-06-12T20:32:15Z [ERROR]     at Object.<anonymous> (src/payments/checkout.test.js:8:1)
+2026-06-12T20:32:16Z [INFO]  Test Results: 46 passed, 2 failed, 0 skipped
+2026-06-12T20:32:16Z [INFO]  Coverage: 74.3% (threshold: 80%) — BELOW THRESHOLD
+2026-06-12T20:32:16Z [ERROR] Coverage check FAILED — 74.3% < 80% minimum
+2026-06-12T20:32:17Z [ERROR] ✗ Job: test — FAILED (22s)
+2026-06-12T20:32:17Z [INFO]  Skipping downstream jobs: deploy (blocked by failed dependency)
+2026-06-12T20:32:18Z [INFO]  ── Post-pipeline cleanup ───────────────────────────────
+2026-06-12T20:32:19Z [INFO]  Uploading test artifacts to S3: s3://ci-artifacts/4821/
+2026-06-12T20:32:21Z [INFO]  Artifact upload complete
+2026-06-12T20:32:22Z [ERROR] Pipeline #4821 FAILED — duration: 82s
+2026-06-12T20:32:22Z [INFO]  Exit code: 1
