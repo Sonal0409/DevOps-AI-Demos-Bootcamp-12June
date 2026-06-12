@@ -1,0 +1,50 @@
+[
+  {
+    "name": "frontend-7d9f8b6c4-xk2pq",
+    "namespace": "production",
+    "phase": "Running",
+    "restarts": 0,
+    "ready": true,
+    "state": { "frontend": "running" }
+  },
+  {
+    "name": "api-server-5c8b9f7d6-mnp3r",
+    "namespace": "production",
+    "phase": "Running",
+    "restarts": 47,
+    "ready": false,
+    "state": { "api-server": "waiting:CrashLoopBackOff" }
+  },
+  {
+    "name": "worker-6f4d2a1b9-qrs7t",
+    "namespace": "production",
+    "phase": "Failed",
+    "restarts": 12,
+    "ready": false,
+    "state": { "worker": "terminated:OOMKilled" }
+  },
+  {
+    "name": "redis-cache-4b7e3c2a1-uvw8x",
+    "namespace": "production",
+    "phase": "Pending",
+    "restarts": 0,
+    "ready": false,
+    "state": { "redis": "waiting:ContainerCreating" }
+  },
+  {
+    "name": "postgres-0",
+    "namespace": "production",
+    "phase": "Running",
+    "restarts": 1,
+    "ready": true,
+    "state": { "postgres": "running" }
+  },
+  {
+    "name": "metrics-exporter-3a9c1d8e2-yza4b",
+    "namespace": "monitoring",
+    "phase": "Running",
+    "restarts": 0,
+    "ready": true,
+    "state": { "exporter": "running" }
+  }
+]
