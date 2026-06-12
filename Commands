@@ -5,3 +5,4 @@
    python3 -m venv venv
   source venv/bin/activate
    pip install pyyaml openai
+echo 'export OPENAI_API_KEY=' >> ~/.bashrc && source ~/.bashrc
